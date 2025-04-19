@@ -1,0 +1,443 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #f5f7fa, #e9d5ff);
+    animation: gradientBG 15s ease infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animated Particles */
+.bg-animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.bg-particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: particleFade 8s linear infinite;
+}
+
+@keyframes particleFade {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+    animation-duration: 1.5s;
+}
+
+/* Perfil */
+.profile-section {
+    margin-bottom: 25px;
+}
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    color: #9370DB;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #FF69B4;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #20B2AA;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    animation-duration: 1.5s;
+    animation-delay: 0.3s;
+    border: 1px solid rgba(122, 130, 209, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    z-index: -1;
+    transform: translateX(-100%);
+    animation: shine 8s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%);
+    }
+    20%, 100% {
+        transform: translateX(100%);
+    }
+}
+
+.emoji {
+    font-size: 1.5em;
+    display: inline-block;
+    margin-left: 10px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Birthday Countdown */
+.birthday-countdown {
+    text-align: center;
+    background: linear-gradient(135deg, #ffefba, #fff8e7);
+    border-left: 5px solid #FF69B4;
+}
+
+#countdown {
+    font-weight: bold;
+    color: #FF1493;
+}
+
+/* Pet Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.pet-card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-align: center;
+    border: 1px solid rgba(148, 187, 233, 0.2);
+}
+
+.pet-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.pet-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 2px solid rgba(122, 130, 209, 0.1);
+}
+
+.pet-card p {
+    font-style: italic;
+    color: #555;
+}
+
+/* Quotes Section */
+.quotes {
+    background: linear-gradient(135deg, #e0f7fa, #bbdefb);
+    border-left: 5px solid #1E90FF;
+}
+
+.quote-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.quote {
+    flex: 1;
+    min-width: 250px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border: 1px solid rgba(122, 130, 209, 0.2);
+}
+
+.quote::before {
+    content: "\201C";
+    font-size: 60px;
+    color: rgba(147, 112, 219, 0.3);
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+
+.quote p {
+    position: relative;
+    z-index: 1;
+    color: #555;
+}
+
+/* Future Dreams */
+.dream-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.dream {
+    flex: 1;
+    min-width: 300px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.nursing {
+    background: linear-gradient(135deg, #FFD3E0, #FFF0F0);
+    border-left: 5px solid #FF69B4;
+}
+
+.psychology {
+    background: linear-gradient(135deg, #D4F0FF, #E6F7FF);
+    border-left: 5px solid #1E90FF;
+}
+
+.dream:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Message Section */
+.message {
+    background: linear-gradient(135deg, #fff9c4, #fffde7);
+    border-left: 5px solid #FFD700;
+}
+
+.friend-message {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border: 1px solid rgba(122, 130, 209, 0.2);
+}
+
+.friend-message::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 30px;
+    border: 10px solid transparent;
+    border-top-color: white;
+}
+
+.signature {
+    margin-top: 20px;
+    text-align: right;
+    color: #9370DB;
+    font-family: 'Pacifico', cursive;
+}
+
+/* Personal Message */
+.personal-message {
+    background: linear-gradient(135deg, #ffd1d1, #ffeaea);
+    border-left: 5px solid #FF69B4;
+    text-align: center;
+}
+
+.personal-message p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.personal-signature {
+    font-family: 'Pacifico', cursive;
+    color: #9370DB;
+    font-size: 1.4rem;
+    margin-top: 15px;
+}
+
+/* Floating Hearts */
+.floating-hearts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.heart {
+    position: absolute;
+    font-size: 24px;
+    animation: float 8s linear infinite;
+    opacity: 0.6;
+}
+
+.heart:nth-child(1) {
+    left: 5%;
+    animation-duration: 15s;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(2) {
+    left: 80%;
+    animation-duration: 12s;
+    animation-delay: 3s;
+}
+
+.heart:nth-child(3) {
+    left: 30%;
+    animation-duration: 18s;
+    animation-delay: 5s;
+}
+
+@keyframes float {
+    0% {
+        top: 100%;
+        transform: translateX(0) rotate(0deg);
+        opacity: 0.6;
+    }
+    100% {
+        top: -10%;
+        transform: translateX(100px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-top: 30px;
+    border-top: 1px solid rgba(122, 130, 209, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.heart-icon {
+    color: #FF1493;
+    animation: pulse 1.5s infinite;
+    display: inline-block;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .pet-card, .dream {
+        min-width: 100%;
+    }
+    
+    .quote {
+        min-width: 100%;
+    }
+} 
